@@ -19,3 +19,19 @@ time_format = '%I:%M %p' # this is the Hour:Minute AM/PM format
 # format using the datetime.strptime()
 start_time = datetime.strptime(start_time, time_format)
 stop_time = datetime.strptime(stop_time, time_format)
+
+# Find the hours spend on a work during a day by dividing 
+# the total seconds spent by 3600( i.e 3600 seconds makes 1 hour)
+hours_spent = round(((stop_time - start_time).seconds) / 3600, 2)
+
+# Calculate the amount of the money earned by the user in a day
+pay_per_hour  = 5
+amount_of_money = round(hours_spent * pay_per_hour, 2)
+
+# Put the information for the user and program into a list named records
+records = []
+
+# Convert from datetime format to string using datetime.strftime
+current_date = datetime.strftime(current_date, '%D')
+start_time = datetime.strftime(start_time, time_format)
+stop_time = datetime.strftime(stop_time, time_format)
