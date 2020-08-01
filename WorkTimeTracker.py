@@ -35,3 +35,26 @@ records = []
 current_date = datetime.strftime(current_date, '%D')
 start_time = datetime.strftime(start_time, time_format)
 stop_time = datetime.strftime(stop_time, time_format)
+
+# Add all information to the records list
+records.append(current_date)
+records.append(client_name)
+records.append(task_name)
+records.append(start_time)
+records.append(stop_time)
+records.append(hours_spent)
+records.append(amount_of_money)
+
+# Write records to the csv file using the csv module
+with open('time_tracking_records.csv', mode = 'a') as time_tracking_records:
+    record_writer = csv.writer(time_tracking_records, delimiter = ',')   
+    record_writer.writerow(records)
+	
+# View the results
+print ('\n')
+print ('..'*40)
+print ('Date : {}'.format(current_date))
+print ('Total hours spent on the work : {}'.format(hours_spent))
+print ("Amount of money earned for the day : ${:0,.2f}".format(amount_of_money))
+print ('..'*40)
+print ('Information written to records successfully')
