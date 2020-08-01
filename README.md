@@ -14,7 +14,7 @@ from datetime import datetime
 1. Retrieve system date
 2. Ask for start time and end time from user
 3. Find the difference between the start and end dates –to find the hours worked
-4. Multiply hours worked by amount (5 cedis).
+4. Multiply hours worked by amount ($5 ).
 5. Put records in a csv file
 
 # Design Implementation
